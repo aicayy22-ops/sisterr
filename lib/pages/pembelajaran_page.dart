@@ -239,11 +239,25 @@ class _PembelajaranPageState extends State<PembelajaranPage> {
         currentIndex: 1,
         selectedItemColor: const Color(0xFFAA829F),
         unselectedItemColor: Colors.grey,
+        onTap: (index) {
+          if (index == 0) {
+            Navigator.pushReplacementNamed(context, '/home');
+          } else if (index == 2) {
+            Navigator.pushReplacementNamed(context, '/presensi');
+          } else if (index == 3) {
+            Navigator.pushReplacementNamed(context, '/jurnal');
+          } else if (index == 4) {
+            Navigator.pushReplacementNamed(context, '/akun');
+          }
+        },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.school), label: 'lms'),
+          BottomNavigationBarItem(icon: Icon(Icons.school), label: 'LMS'),
           BottomNavigationBarItem(icon: Icon(Icons.face), label: 'Presensi'),
-          BottomNavigationBarItem(icon: Icon(Icons.assignment), label: 'cbt'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.assignment),
+            label: 'Jurnal',
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Akun'),
         ],
       ),
